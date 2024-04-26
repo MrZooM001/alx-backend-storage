@@ -3,23 +3,23 @@
 DELIMITER //
 
 CREATE PROCEDURE AddBonus(
-    IN p_user_id INT,
-    IN p_project_name VARCHAR(255),
-    IN p_score INT
+    IN user_id INT,
+    IN project_name VARCHAR(255),
+    IN score INT
 )
 BEGIN
-    DECLARE var_project_id INT;
-    SELECT id INTO var_project_id
-    FROM projects
-    WHERE name = p_project_name;
-    IF var_project_id IS NULL THEN
-        INSERT INTO projects (name) VALUES (p_project_name);
-        SET var_project_id = LAST_INSERT_ID();
+    DECLARE project_id INT DEFAULT 0;
+    SELECT id INTO project_id FROM projects
+    WHERE name = project_name;
+    IF project_id IS NULL THEN
+        INSERT INTO projects (name) VALUES (project_name);
+        SET project_id = LAST_INSERT_ID();
     END IF;
-    INSERT INTO corrections (user_id, project_id, score) VALUES (p_user_id, var_project_id, p_score);
+    INSERT INTO corrections (user_id, project_id, score) VALUES (user_id, project_id, score);
     UPDATE users
-    SET average_score = (SELECT AVG(score) FROM corrections WHERE user_id = p_user_id)
-    WHERE id = p_user_id;
+    SET average_score = (
+        SELECT AVG(score) FROM corrections WHERE user_id = user_id
+    ) WHERE id = user_id;
 END;
 
 // DELIMITER ;

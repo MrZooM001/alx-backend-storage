@@ -11,3 +11,6 @@
 * **[4. Buy buy buy](4-store.sql)**
 * **[5. Email validation to sent](5-valid_email.sql)**
 * **[6. Add bonus](6-bonus.sql)**
+* **[7. Average score](7-average_score.sql)**
+* **[8. Optimize simple search](8-index_my_names.sql)**
+* **[9. Optimize search and score](9-index_name_score.sql)**

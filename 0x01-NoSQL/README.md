@@ -1,4 +1,4 @@
-**ALX Short Specialization | Back-End JavaScript**
+**ALX Short Specialization | Back-End**
 **<h1><span style="font-size: 22px;">***Project***: </span><span style="color: #ffdd99;">0x01. NoSQL</span></h1>**
 
 ***Scope*** ` Back-end ` ` NoSQL ` ` MongoDB ` <br />

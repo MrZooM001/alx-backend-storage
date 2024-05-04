@@ -56,9 +56,10 @@ def cache_expiration(expiration: int):
     Decorator function to add expiration to cached data.
 
     It takes an expiration time in seconds as an argument.
-    and then wraps the decorated function and adds expiration logic to the cache.
-    When the decorated function is called, it checks if the cached data is expired.
-    If the data is expired, it calls the decorated function to fetch new data and updates the cache.
+    and then wraps the decorated function and adds expiration logic
+    to the cache. When the decorated function is called,
+    it checks if the cached data is expired. If the data is expired,
+    it calls the decorated function to fetch new data and updates the cache.
     If the data is not expired, it returns the cached data.
 
     Arguments:

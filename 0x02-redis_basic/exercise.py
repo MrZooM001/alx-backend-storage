@@ -63,7 +63,7 @@ def call_history(method: Callable) -> Callable:
     return wrapped
 
 
-def replay(self, method: Callable) -> None:
+def replay(self, method: Callable):
     """
     Replays the input and output of a method
     that has been decorated with the `call_history` decorator.
